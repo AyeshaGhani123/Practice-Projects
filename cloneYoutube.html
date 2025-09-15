@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Clone Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: "Roboto", sans-serif;
+            /* box-sizing: border-box; */
+            margin: 0;
+            padding: 0;
+        }
+
+        .topMenu{
+            display: grid;
+            grid-template-columns: 25% 50% 25%;   
+        }
+
+        /* left menu styling */
+        .topMenu .leftMenu{
+            display: grid;
+            grid-template-columns: 20% 80%;
+        }
+        /* .topMenu .leftMenu .logo{
+            display: inline-block;
+            font-size: 20px;
+            letter-spacing: -2px;
+        }
+        .topMenu .leftMenu .logo .youtubeLogo{
+           color: red;
+           font-size: 30px;
+           font-weight:600;
+        } */
+
+        .topMenu .youtube{
+            width: 130px;
+        }
+        .topMenu .leftMenu .bar{
+           margin: auto;
+          font-size: 20px;
+          color: rgb(104, 104, 104);
+        }
+
+        /* center menu styling */
+      
+        .centerMenu{
+          display: grid;
+          grid-template-columns: 80% 20%;
+            
+        }
+        .centerMenu .searchbar{
+            display: inline-block;
+            margin: auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 85% 15%;
+            height: 40px;
+        }
+        .centerMenu .searchbar input{
+           border-top-left-radius: 20px;
+           border-bottom-left-radius: 20px;
+           border: 1px solid gray;
+           padding: 10px;
+        }
+        .centerMenu .searchbar .magnifying{
+            border-top-right-radius: 20px;
+           border-bottom-right-radius: 20px;
+           font-size: 18px; 
+           border: 1px solid gray;
+           border-left: none;
+
+        }
+        .centerMenu .microphone{
+            border-radius: 50px;
+            font-size: 18px;
+            height: 40px;
+            margin: auto;
+            width: 28%;
+            border: none;
+            margin-left: 20px;
+        }
+
+        /* right menu styling */
+    
+        .rightMenu{
+            margin: auto;
+            display: grid;
+            grid-template-columns: 33% 33% 34%;
+            width: 70%;
+        
+        }
+
+        .rightMenu .video{
+            border-radius: 50px;
+            margin: auto;
+            height: 50px;
+            width: 50%;
+            font-size: 20px;
+            border: none;
+            background-color: white;
+            margin-left: 100px;
+        }
+        .rightMenu .bell{
+            margin: auto;
+            height: 50px;
+            width: 70%;
+            font-size: 20px;
+            position: relative;
+            border: none;
+            background-color: white;
+            margin-left: 50px;
+        }
+        .rightMenu .bell .notification{
+            color: white;
+            background-color: red;
+            position: absolute;
+            font-size: 12px;
+            right: 12px;
+            top: 5px;
+            width: 30%;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .rightMenu .alphabet{
+            border-radius: 50px;
+            margin: auto;
+            height: 35px;
+            width: 35%;
+            font-size: 16px;
+            color: white;
+            background-color: rgb(183, 44, 44);
+            border: none;
+        }
+       
+
+        /* Vertical Nav Bar Styling */
+        .verticalNavBar .vList{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 19%;
+            overflow: auto;
+            position: fixed;
+            list-style-type: none;
+            scrollbar-width: none;
+        }
+
+        .verticalNavBar .vList::-webkit-scrollbar{
+            display: none;
+        }
+        .verticalNavBar .vList a{
+            width: 180px;
+        padding: 8px 16px;
+        margin-left: 20px;
+        border-radius: 10px;
+        margin-bottom: 2px;
+            text-decoration: none;
+           color: black;
+           display: block;       
+        }
+
+        .verticalNavBar .vList img{
+            width:25px;
+            height: 25px;
+            border-radius: 15px;
+            padding-right: 20px;
+          
+           
+        }
+
+        .verticalNavBar .vList li a#mainButtons{
+            font-weight: 600;
+        }
+
+        .verticalNavBar .vList li a:hover:not(.active){
+       background-color:#f0efef;
+        }
+
+        .verticalNavBar .vList li a.active{
+            background-color:#f0efef;
+        }
+
+        /* horizontal navbar styling */
+ 
+    .content{
+        margin-left: 20%;
+        padding: 1px 16px;
+    }
+
+    .horizontalNavBar {
+        display: flex;
+        width: 100%;
+    }
+    
+    .horizontalNavBar .hList{
+        display: flex;
+        flex: 1;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        white-space: nowrap;
+        list-style-type: none;
+    }
+
+    .horizontalNavBar .hList li{
+        float: left;
+    }
+
+    .horizontalNavBar .hList li a{
+        text-decoration: none;
+        color: black;
+        white-space: nowrap;
+        padding: 8px 16px;
+        display: block;
+        margin: 5px;
+        border-radius: 10px;
+        background-color: #f0efef;
+    }
+
+    .horizontalNavBar .hList li a:hover:not(.active2){
+        background-color: #cfcece;
+    }
+
+    .horizontalNavBar .hList li a.active2{
+        background-color: black;
+        color: white;
+    }
+
+    .horizontalNavBar .scroll-btn{
+        height: 40px;
+        width: 40px;
+        border-radius: 25px;
+        margin: auto;
+        background-color: white;
+        border: none;
+    }
+    .horizontalNavBar .scroll-btn:hover{
+        background-color: #f0efef;
+    }
+
+
+    .clearFix{
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+    /* video content styling */
+    .videoContent{
+        margin-top: 20px;
+        
+    }
+    .videoCollection{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        height: auto;
+        margin-top: 20px;
+    
+    }
+    .videoCollection .video{
+    margin: 5px;
+    border-radius: 15px;
+    padding: 10px;
+    }
+
+    .videoCollection .video:hover{
+        background-color: #f0efef;
+    }
+    .videoContent .video .thumbnail{
+        border-radius: 15px;
+        width: 100%;
+        height: auto;
+    }
+
+    .videoCollection .video .authorName, .viewTime{
+       margin-top: -15px;
+       color: gray;
+    }
+
+    .videoCollection .video .title{
+        margin-top: 5px;
+        font-weight: 500;
+        font-size: 18px;
+
+    }
+  
+
+    </style>
+</head>
+<body>
+    <nav class="topMenu">
+        <div class="leftMenu">
+                <i class="fa-solid fa-bars bar"></i>
+                <img class="youtube" src="images/youtube.PNG" alt="">
+                <!-- <p class="logo"><i class="fa-brands fa-youtube youtubeLogo"></i>
+                YouTube<sup class="pkText">pk</sup></p> -->
+
+        </div>
+
+        <div class="centerMenu">
+            <div class="searchbar">
+                <input type="text" placeholder="Search">
+                <button class="magnifying"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+                <button class="microphone"><i class="fa-solid fa-microphone"></i></button>
+        </div>
+
+        <div class="rightMenu">
+                 <button class="video"><i class="fa-solid fa-video"></i></button>
+                 <button class="bell"><i class="fa-regular fa-bell"></i><sup class="notification">9+</sup></button>
+                 <button class="alphabet"><i class="fa-solid fa-a"></i></button>
+        </div>
+    </nav>
+    <nav class="verticalNavBar">
+        <ul class="vList">
+            <li><a href="" class="active"><img src="images/home.svg" alt="">Home</a></li>
+            <li><a href=""><img src="images/shorts.svg" alt="">Shorts</a></li>
+            <li><a href=""><img src="images/subscriptions.svg" alt="">Subscriptions</a></li>
+            <hr> 
+            <li><a id="mainButtons" href="">You <i class="fa-solid fa-angle-left"></i></a></li>
+            <li><a href=""><img src="images/your channel.svg" alt="">Your Channel</a></li>
+            <li><a href=""><img src="images/History.svg" alt="">History</a></li>
+            <li><a href=""><img src="images/playlist.svg" alt="">Playlist</a></li>
+            <li><a href=""><img src="images/your videos.svg" alt="">Your videos</a></li>
+            <li><a href=""><img src="images/watch Later.svg" alt="">Watch Later</a></li>
+            <li><a href=""><img src="images/likedVideo.svg" alt="">Liked videos</a></li>
+            <hr>
+            <li><a id="mainButtons" href="">Subscriptions</a></li>
+            <li><a href=""><img src="images/asset 11.jpeg" alt="">Dr. Vineeta Negi ...</a></li>
+            <li><a href=""><img src="images/asset 3.jpeg" alt="">LOL (Life of Limb...</a></li>
+            <li><a href=""><img src="images/asset 4.jpeg" alt="">Harshit Vashisth</a></li>
+            <li><a href=""><img src="images/asset 5.jpeg" alt="">Amna In Korea</a></li>
+            <li><a href=""><img src="images/asset 6.jpeg" alt="">Kanwal Ahmaed</a></li>
+            <li><a href=""><img src="images//show more.svg" alt="">Show more</a></li>
+            <hr>
+            <li><a id="mainButtons" href="">Explore</a></li>
+            <li><a href=""><img src="images/trending.svg" alt="">Trending</a></li>
+            <li><a href=""><img src="images/music.svg" alt="">Music</a></li>
+            <li><a href=""><img src="images/gaming.svg" alt="">Gaming</a></li>
+            <li><a href=""><img src="images/news.svg" alt="">News</a></li>
+            <li><a href=""><img src="images/sports.svg" alt="">Sports</a></li>
+            <hr>
+            <li><a id="mainButtons" href="">More from Youtube</a></li>
+            <li><a href=""><img src="images/Youtube Premium.svg" alt="">YouTube Premium</a></li>
+            <li><a href=""><img src="images/youtube studio.svg" alt="">YouTube Studio</a></li>
+            <li><a href=""><img src="images/youtube music.svg" alt="">YouTube Music</a></li>
+            <li><a href=""><img src="images/youtube kids.svg" alt="">YouTTube Kids</a></li>
+            <hr>
+            <li><a href=""><img src="images/setting.svg" alt="">Setting</a></li>
+            <li><a href=""><img src="images/report history.svg" alt="">Report history</a></li>
+            <li><a href=""><img src="images/help.svg" alt="">Help</a></li>
+            <li><a href=""><img src="images/send feedback.svg" alt="">Send feedback</a></li>
+        </ul>
+    </nav>
+        <div class="content">
+            <nav class="horizontalNavBar">
+                <button class="scroll-btn" id="scroll-left">&lt;</button>
+                <ul class="hList" id="horizontalBar">
+                    <li><a class="active2" href="">All</a></li>
+                    <li><a href="">Web Development</a></li>
+                    <li><a href="">Computer Programming</a></li>
+                    <li><a href="">User Interface Design</a></li>
+                    <li><a href="">Music</a></li>
+                    <li><a href="">Recruitment</a></li>
+                    <li><a href="">Foundation</a></li>
+                    <li><a href="">Mixes</a></li>
+                    <li><a href="">Google</a></li>
+                    <li><a href="">Practice</a></li>
+                    <li><a href="">Skin Care</a></li>
+                    <li><a href="">Jungkook</a></li>
+                    <li><a href="">News</a></li>
+                    <li><a href="">Logo</a></li>
+                    <li><a href="">Live</a></li>
+                    <li><a href="">Test</a></li>
+                    <li><a href="">Sales</a></li>
+                    <li><a href="">Cooking shows</a></li>
+                    <li><a href="">Recently uploaded</a></li>
+                    <li><a href="">Watched</a></li>
+                    <li><a href="">New to you</a></li>
+                </ul>
+                <button class="scroll-btn" id="scroll-right">&gt;</button>
+            </nav>
+            <div class="clearFix"></div>
+
+            <div class="videoContent">
+               <div class="videoCollection">
+                <div class="video">
+                    <img class="thumbnail" src="images/video1.PNG" alt="">
+                    <h3 class="title">Watch this before you start coding!|10 tips for coders</h3>
+                    <p class="authorName">Apna College</p>
+                    <p class="viewTime">1.9M views . 1 year ago</p>
+                </div>
+                <div class="video">
+                    <img class="thumbnail" src="images/video2.PNG" alt="">
+                    <h3 class="title">How a Software Engineer can get a job in Germany|Skills you need to IT job</h3>
+                    <p class="authorName">Suleman Bhatti</p>
+                    <p class="viewTime">10k views . 4 weeks ago</p>
+                </div>
+                <div class="video">
+                    <img class="thumbnail" src="images/video3.PNG" alt="">
+                    <h3  class="title">AI Killed Web Development - The Reality(Honest Truth)</h3>
+                    <p class="authorName">CodeWithHarry</p>
+                    <p class="viewTime">33k views . 2 months ago</p>
+                </div>
+               </div>
+               <div class="videoCollection">
+                <div class="video">
+                    <img class="thumbnail" src="images/video4.PNG" alt="">
+                    <h3 class="title">10 Udemy Courses Every Developer SHOULD Own(NOT just coding)</h3>
+                    <p class="authorName">Travis Media</p>
+                    <p class="viewTime">857k views . 1 year ago</p>
+                </div>
+                <div class="video">
+                    <img class="thumbnail" src="images/video5.PNG" alt="">
+                    <h3 class="title">A to Z JOB GUIDE 2024| How to become a Software Engineer 2024</h3>
+                    <p class="authorName">Nishant Chahar</p>
+                    <p class="viewTime">194k views . 5 months  ago</p>
+                </div>
+                <div class="video">
+                    <img class="thumbnail" src="images/video6.PNG" alt="">
+                    <h3  class="title">WEB DEVELOPMENT COMPLETE ROADMAP FOR BEGINNERS</h3>
+                    <p  class="authorName">Neeraj Walia</p>
+                    <p  class="viewTime">95k views . 12 days ago</p>
+                </div>
+               </div>
+    
+            </div>
+        </div>
+
+        <script>
+
+            document.getElementById('scroll-right').addEventListener('click', function() {
+            document.getElementById('horizontalBar').scrollBy({
+                behavior:"smooth",
+                left:200
+            })
+        })
+            document.getElementById('scroll-left').addEventListener('click', function() {
+                document.getElementById('horizontalBar').scrollBy({
+                behavior:"smooth",
+                left:-200
+                })
+            })
+        </script>
+    
+</body>
+</html>
