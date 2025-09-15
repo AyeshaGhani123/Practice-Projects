@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ddd
+}
+
+
+/* ##############Header styling################# */
+.container{
+    margin: 0 auto;
+   max-width: 1200px;
+   width: 90%;
+  
+ }
+ .logo{
+    display: inline-block;
+ }
+ .navBar{
+    background-color: #263238;
+ }
+
+ .header::after{
+    content: "";
+    display: block;
+    clear: both;
+
+ }
+ .header{
+    background-color: #263238;
+    height:80px
+ }
+ .white{
+    color: white;
+ }
+
+.nav-items{
+    float:right
+}
+
+.a-items{
+    display: inline-block;
+
+}
+.nav-items {
+    padding-top: 40px;
+
+}
+.logo{
+    padding-top: 35px;
+    font-weight: 500;
+
+}
+.a-items a {
+    color: white;
+    text-decoration: none;
+    margin: 30px;
+    
+}
+.a-items a:hover{
+    border-bottom: 2px white solid;
+}
+
+/* #################About us styling################# */
+
+.AboutUs-heading h1{
+    padding-bottom: 5px;
+   letter-spacing: 5px;
+   border-bottom: solid rgb(236, 106, 106) 4px;
+   font-weight: 500;
+}
+.paragraph-p{
+    padding: 10px 0;
+}
+.About-Us{
+    margin :80px 0 80px 0;
+}
+/* ###################features div styling################# */
+.features::after{
+content: "";
+display: block;
+clear: both;
+
+}
+
+
+.features .featureset1{
+    float: left;
+    text-align: center;
+    width: 50%;
+
+}
+.features .featureset2{
+    float: right;
+    text-align: center;
+    width: 50%;
+
+}
+.features-paragraph{
+    padding: 5px;
+}
+/* ###################packages div styling################# */
+.packages::after{
+    content: "";
+    display: block;
+    clear: both;
+     }
+.packages{
+    padding: 25px 0;
+}
+.packages .package1{
+    float: left;
+    width: 25%;
+    text-align: center;
+
+}
+.packages .package2{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.packages .package3{
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+.packages .package4{
+    float: left;
+    width: 25%;
+    text-align: center;
+    
+}
+.packages h2{
+    color: rgb(236, 106, 106) ;
+}
+.packages p{
+    font-weight: bold;
+}
+.check-mark{
+    color:rgb(236, 106, 106) ;
+    font-weight: bolder;
+    padding-right: 5px;
+}
+
+/* ###################contactUs div styling################# */
+.contactUs::after{
+    content: "";
+display: block;
+clear: both;
+}
+.contactUs{
+    border: solid red 2px;
+    height: 80px;
+    background-color: rgb(236, 106, 106);
+    padding: 0px 20px;
+}
+
+.contactUs .contactUs-Btn{
+    float: Right;
+    width: 40%;
+
+    
+}
+.contactUs .contactUs-para{
+    float: left;
+    width: 60%;
+
+}
+.contactUs-para{
+    display: inline-block;
+    padding: 25px;
+    color: white;
+    font-weight: 700;
+
+}
+.contactUs-Btn{
+    border: white solid 4px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-top:10px;
+    font-size: 40px;
+   
+   
+    
+   
+  
+    
+}
+
+/* ################   footer design######### */
+div.socialmedia-options{
+    display: inline-block;
+    padding-top: 20px;
+
+ }
+ footer{
+    background-color:#263238 ;
+    height:122px;
+    margin-top: 100px;
+   
+ }
+ .color-white{
+    color: white;
+ }
+ .footer-options{
+    text-align: center;
+ }
+ .fa-brands{
+    padding-right: 30px;
+ }
+ .footer-para{
+ padding:20px
+ }
+
+
+
+
+/* .contactUs .contactUs-Btn{
+    float:right;
+    text-align: center;
+   width: 50%;
+   border: white solid 2px;
+    color: white;
+    text-decoration: none;
+}
+.contactUs p{
+    float: left;
+    width: 50%;
+}
+
+.contactUs p{
+    display: inline-block;
+    padding: 22px;
+    color: white;
+    font-weight: 700;
+    border: solid green 2px;
+}
+.contactUs-Btn{
+    display: inline-block;
+}
+
+     */
